@@ -40,3 +40,4 @@ class Banco:
             print(f" Atendiendo a cliente: {cliente}")
         else:
             print(" No hay clientes en la cola.")
+            #1
