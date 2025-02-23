@@ -41,3 +41,13 @@ class Banco:
         else:
             print(" No hay clientes en la cola.")
             #1
+
+    def mostrar_espera(self):
+        """
+        Muestra la cantidad de clientes en espera en ambas colas.
+        """
+        total = len(self.cola_prioritaria) + len(self.cola_general)  # Cantidad total de clientes en espera
+        print(f" Clientes en espera: {total}")
+        print(f" Prioritarios: {list(self.cola_prioritaria)}")  # Muestra la cola de clientes prioritarios
+        print(f" Generales: {list(self.cola_general)}")  # Muestra la cola de clientes normales
+
