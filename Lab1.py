@@ -65,3 +65,24 @@ def menu():
         print("3. Mostrar cola de espera")
         print("4. Salir")
         opcion = input("Seleccione una opción: ")  # Captura la opción elegida
+
+        if opcion == "1":  # Agregar cliente
+            nombre = input("Ingrese el nombre del cliente: ")  # Solicita el nombre
+            prioritario = input("¿Es cliente prioritario? (s/n): ").lower() == 's'  # Pregunta si es prioritario
+            banco.agregar_cliente(nombre, prioritario)  # Llama al método para agregar cliente
+        
+        elif opcion == "2":  # Atender cliente
+            banco.atender_cliente()
+        
+        elif opcion == "3":  # Mostrar clientes en espera
+            banco.mostrar_espera()
+        
+        elif opcion == "4":  # Salir del programa
+            print(" Saliendo del sistema...")
+            break  # Termina el ciclo while
+        
+        else:
+            print(" Opción no válida. Intente de nuevo.")  # Mensaje de error si la opción no es válida
+
+# Ejecutar el menú principal
+menu()
