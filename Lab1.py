@@ -41,3 +41,27 @@ class Banco:
         else:
             print(" No hay clientes en la cola.")
             #1
+            def mostrar_espera(self):
+        """
+        Muestra la cantidad de clientes en espera en ambas colas.
+        También imprime la lista de clientes en cada cola.
+        """
+        total = len(self.cola_prioritaria) + len(self.cola_general)  # Cantidad total de clientes en espera
+        print(f" Clientes en espera: {total}")
+        print(f" Prioritarios: {list(self.cola_prioritaria)}")  # Muestra la cola de clientes prioritarios
+        print(f" Generales: {list(self.cola_general)}")  # Muestra la cola de clientes normales
+
+def menu():
+    """
+    Función principal que muestra un menú interactivo en la consola.
+    Permite agregar, atender y visualizar clientes en espera.
+    """
+    banco = Banco()  # Se crea una instancia del banco para manejar la cola de clientes
+    
+    while True:  # Ciclo infinito hasta que el usuario decida salir
+        print("\n--- Menú del Banco ---")
+        print("1. Agregar cliente")
+        print("2. Atender cliente")
+        print("3. Mostrar cola de espera")
+        print("4. Salir")
+        opcion = input("Seleccione una opción: ")  # Captura la opción elegida
